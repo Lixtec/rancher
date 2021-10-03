@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.10
 
 COPY ./rancher-entrypoint.sh /
 ENV SSL_SCRIPT_COMMIT 98660ada3d800f653fc1f105771b5173f9d1a019
