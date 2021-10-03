@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPO=${REPO:-rancher}
+REPO=${REPO:-lixtec}
 TAG=${TAG:-dev}
 
 docker build -t $REPO/agent-base:${TAG} .
