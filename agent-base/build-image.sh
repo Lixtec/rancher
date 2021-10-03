@@ -1,7 +1,7 @@
 #!/bin/bash
 
-REPO=${REPO:-lixtec}
-TAG=${TAG:-dev}
+REPO=${1:-lixtec}
+TAG=${2:-dev}
 
 docker build -t $REPO/agent-base:${TAG} .
 echo Built $REPO/agent-base:${TAG}

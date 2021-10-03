@@ -8,7 +8,7 @@ RUN apt-get update && \
         bridge-utils \
         ca-certificates \
         conntrack \
-        curl \
+        curl wget \
         ethtool \
         iproute2 \
         iptables \
@@ -17,14 +17,12 @@ RUN apt-get update && \
         kmod \
         openssl \
         psmisc \
-        python2.7 \
+        python3 python3-pip\
         tcpdump \
-        vim-tiny && \
-    rm -rf /var/lib/apt/lists/* && \
+        vim-tiny
+RUN rm -rf /var/lib/apt/lists/* && \
     mkdir -p /var/lib/cattle /var/lib/rancher && \
-    ln -s /usr/bin/python2.7 /usr/bin/python && \
-    curl -s https://bootstrap.pypa.io/get-pip.py | python2.7 && \
-    pip install cattle && \
+    pip3 install cattle && \
     curl -sL https://github.com/rancher/runc/releases/download/share-mnt-v0.2.1/share-mnt > /usr/bin/share-mnt && \
     chmod +x /usr/bin/share-mnt && \
     curl -sL https://github.com/rancher/weave/releases/download/r-v0.0.4/r > /usr/bin/r && \
